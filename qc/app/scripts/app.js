@@ -24,6 +24,10 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/MyPlaces', {
+        templateUrl: 'views/myPlaces.html'
+    
+      })
       .otherwise({
         redirectTo: '/'
       });

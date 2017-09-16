@@ -30,9 +30,7 @@ angular.module('qcApp')
 
     function showPosition(position) {
     	latitude = position.coords.latitude;
-    	longitude = position.coords.longitude;
-
-      console.log(position.coords.latitude, position.coords.longitude);
+    	longitude = position.coords.longitude;    
     }
 
     $scope.qualityFunc = function() {
@@ -40,21 +38,21 @@ angular.module('qcApp')
         .then(function(success) {
           place_id = success.data.results[0].place_id;
           //place_id = 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+
       var mapProp= {
 		    center:new google.maps.LatLng(latitude,longitude),
 		    zoom:15,
 	  };
 	  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
           mainServiceObj.getQuality(place_id)
             .then(function(success) {
-            	$scope.types = success.data.result.types[0];
-              if (success.data.result.rating) {
-                $scope.rating = success.data.result.rating;                
-                console.log(success.data.result.rating)
-                console.log(success)
+               $scope.types = success.data.result.types[0];
+               if (success.data.result.rating) {
+                $scope.rating = success.data.result.rating;      
+               
               } else {
-                $scope.rating = 'No rating for ' + success.data.result.name;
-                console.log(success)
+                $scope.rating = 'No rating for ' + success.data.result.name;                
               }
             });
         });
