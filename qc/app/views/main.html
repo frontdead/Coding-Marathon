@@ -1,21 +1,19 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+  <h1>Hello!</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman">
-    <br> Always a pleasure scaffolding your apps.
+    <img src="images/dollar-sign.png" alt="quality">
+    <br> Always a pleasure to give you all the details you need from the place you are at the moment!
   </p>
-  <button ng-click="myFunc()">test</button> 
-  <p><a class="btn btn-lg btn-success" >Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+  <button class="btn btn-lg btn-success" ng-click="qualityFunc()">Give me Quality Control</button> 
+  
 </div>
 <div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
+  <h4>Show me the Rating</h4>
   <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+    {{rating}} 
   </p>
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  <h4>Show me where am I</h4>  
+  <p id="googleMap"></p>
+  <h4>What type of place is It?</h4>
+  <p>{{types}}</p>
 </div>
